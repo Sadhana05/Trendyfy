@@ -28,20 +28,23 @@
 }
 
 .nav-menu li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 3px;
+    position: relative;
     cursor: pointer;
 }
 
-.nav-menu hr {
-    border: none;
-    width: 80px;
+.nav-menu li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; 
+    width: 0;
     height: 3px;
-    border-radius: 10px;
     background: #ff4141;
+    transition: width 0.3s ease; 
+}
+
+.nav-menu li:hover::after {
+    width: 100%; 
 }
 
 .nav-login-cart {
